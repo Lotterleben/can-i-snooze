@@ -24,11 +24,15 @@ def get_delay_info(day, train_name):
 
     for row in rows:
         train = row.find_all('a', text=re.compile(".*ICE.*"))[0].text
-        info = row.find_all('td', {'class':'ris'})[0]
+        info = row.find_all('td', {'class':'ris'})
+        delay = 0
 
-        if (train_name in train):
-            delay_info = info.find_all('span', text=re.compile(".*ca\. \+*"))
-            delay = 0
+        if (not info):
+            print "Too far in the future; no info available yet."
+            delay = -1
+
+        elif (train_name in train):
+            delay_info = info[0].find_all('span', text=re.compile(".*ca\. \+*"))
 
             # if there is info about a delay, there is a delay (duh)
             if (delay_info):
@@ -42,7 +46,11 @@ def get_delay_info(day, train_name):
                 print "train: ", train_name
                 print "delay: ", delay
 
-            return {"train", train_name, "delay", delay}
+        else:
+            # TODO handle this like a grown-up.
+            print "something went terribly wrong. :("
+
+        return {"train", train_name, "delay", delay}
 
 if __name__ == "__main__":
     today = datetime.date.today()
