@@ -14,8 +14,7 @@ def next_tuesday(day):
 
 def get_delay_info(day, train_name):
     #train_name = "ICE"
-    day = "03.10.14"
-    req_str = "http://reiseauskunft.bahn.de/bin/bhftafel.exe/dn?&rt=1&input=Berlin+Hbf&time=12:00&date=%s&productsFilter=1000000000&start=1&boardType=arr&REQTrain_name=209" % (day)
+    req_str = "http://reiseauskunft.bahn.de/bin/bhftafel.exe/dn?&rt=1&input=Hamburg+Hbf&time=07:45&date=%s&productsFilter=1000000000&start=1&boardType=arr&REQTrain_name=1518" % (day)
 
     print "Fetching Verbindungsinformationen..."
     req = requests.get(req_str)
@@ -47,9 +46,8 @@ def get_delay_info(day, train_name):
 
 if __name__ == "__main__":
     today = datetime.date.today()
-    train_name = "ICE  209"
+    train_name = "ICE 1518"
     next_tuesday = next_tuesday(today).strftime("%d.%m.%y")
     print("Getting delay info for %s on tuesday, %s ..." % (train_name, next_tuesday))
-    #print get_delay_info(next_tuesday, train_name)
-    print get_delay_info(today.strftime("%d.%m.%y"), train_name)
+    print get_delay_info(next_tuesday, train_name)
 
