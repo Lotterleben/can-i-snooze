@@ -1,6 +1,10 @@
 import datetime
-from bottle import route, run, template
+from bottle import route, run, template, static_file
 from canisnooze import get_delay_info, next_tuesday
+
+@route('/resources/<filename>')
+def server_static(filename):
+    return static_file(filename, root='resources/')
 
 @route('/')
 def display_delay():
