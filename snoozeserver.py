@@ -11,16 +11,6 @@ def display_delay():
     info = get_delay_info(tuesday, train_name)
     delay = info["delay"]
 
-    if (delay == -2):
-        answer = "I have no idea, something went terribly wrong. Sorry."
-    elif (delay == -1):
-        answer = "I don't know yet, please come back later."
-    elif (delay == 0):
-        answer = "No."
-    else:
-        # TODO: make delay time stand out (wo mach ich das am besten?)
-        answer = "Yes! %i more minutes." % delay
-
-    return template('snoozetemplate', answer=answer)
+    return template('snoozetemplate', delay=delay)
 
 run(host='localhost', port=8080, debug=True)
