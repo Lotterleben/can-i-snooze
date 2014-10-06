@@ -17,4 +17,4 @@ def display_delay():
 
     return template('snoozetemplate', delay=delay)
 
-run(host='localhost', port=8080, debug=True)
+run(host='0.0.0.0', port=8080, debug=False)
