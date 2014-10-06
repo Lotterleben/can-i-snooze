@@ -28,7 +28,7 @@ def get_delay_info(day, train_name):
         delay = 0
 
         if (not info):
-            print "Too far in the future; no info available yet."
+            print "Too far in the future; no delay info available yet."
             delay = -1
 
         elif (train_name in train):
@@ -48,14 +48,16 @@ def get_delay_info(day, train_name):
 
         else:
             # TODO handle this like a grown-up.
+            delay = -2
             print "something went terribly wrong. :("
 
-        return {"train", train_name, "delay", delay}
+        return {"train": train_name, "delay": delay}
 
 if __name__ == "__main__":
     today = datetime.date.today()
     train_name = "ICE 1518"
     next_tuesday = next_tuesday(today).strftime("%d.%m.%y")
     print("Getting delay info for %s on tuesday, %s ..." % (train_name, next_tuesday))
-    print get_delay_info(next_tuesday, train_name)
-
+    info = get_delay_info(next_tuesday, train_name)
+    print info
+    print info["delay"]
