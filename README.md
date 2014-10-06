@@ -1,0 +1,5 @@
+## dependencies
+
+- BeautifulSoup
+- requests
+- bottle
