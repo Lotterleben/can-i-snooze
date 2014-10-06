@@ -23,7 +23,7 @@
             height: 165px;
             line-height: 165px;
             background: url(resources/congruent_pentagon.png);
-            text-shadow: 0px 0px 20px rgba(150, 170, 150, 0.5);
+            text-shadow: 0px 0px 30px rgba(150, 170, 150, 0.3);
         }
 
         hr {
@@ -35,7 +35,7 @@
 
         p {
             font-weight: lighter;
-            font-size: 80px;
+            font-size: 75px;
         }
     </style>
 </head>
