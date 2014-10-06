@@ -1,5 +1,5 @@
 import datetime
-from bottle import route, run
+from bottle import route, run, template
 from canisnooze import get_delay_info, next_tuesday
 
 @route('/')
@@ -21,6 +21,6 @@ def display_delay():
         # TODO: make delay time stand out (wo mach ich das am besten?)
         answer = "Yes! %i more minutes." % delay
 
-    return answer
+    return template('snoozetemplate', answer=answer)
 
 run(host='localhost', port=8080, debug=True)

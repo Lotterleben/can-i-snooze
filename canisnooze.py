@@ -47,7 +47,7 @@ def get_delay_info(day, train_name):
                 print "delay: ", delay
 
         else:
-            # TODO handle this like a grown-up.
+            # TODO handle this like a grown-up. (and log that shit)
             delay = -2
             print "something went terribly wrong. :("
 
