@@ -16,21 +16,16 @@
         }
 
         h1 {
+            padding-top: 25px;
+            padding-bottom: 20px;
             font-weight: black;
             font-size: 80px;
             color: white;
             margin: 0;
             height: 165px;
-            line-height: 165px;
+            line-height: 90%;
             background: url(resources/congruent_pentagon.png);
             text-shadow: 0px 0px 30px rgba(150, 170, 150, 0.3);
-        }
-
-        hr {
-            height: 1px;
-            border: 0;
-            background: #999;
-            margin: 25px 0;
         }
 
         p {
