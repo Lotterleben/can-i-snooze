@@ -15,17 +15,21 @@
             font-family: sans-serif;
         }
 
+        div {
+            height: auto;
+            background: url(resources/congruent_pentagon.png);
+            text-align: center;
+        }
+
         h1 {
-            padding-top: 25px;
-            padding-bottom: 20px;
+            padding: 25px;
             font-weight: black;
             font-size: 80px;
             color: white;
             margin: 0;
-            height: 165px;
-            line-height: 90%;
-            background: url(resources/congruent_pentagon.png);
             text-shadow: 0px 0px 30px rgba(150, 170, 150, 0.3);
+            display: inline-block;
+            vertical-align: middle;
         }
 
         p {
@@ -36,7 +40,9 @@
 </head>
 <body>
 
-    <h1>Can I Snooze?</h1>
+    <div>
+        <h1>Can I Snooze?</h1>
+    </div>
     % if (delay == -2):
         <p>I have no idea. :( <br> Something went terribly wrong. Sorry.</p>
     % elif (delay == -1):
